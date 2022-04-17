@@ -99,5 +99,10 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt
+        name: XIAOZHAO
         path: openwrt/bin
+    - name : Upload artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: OpenWrtDl
+        path: openwrt/dl
