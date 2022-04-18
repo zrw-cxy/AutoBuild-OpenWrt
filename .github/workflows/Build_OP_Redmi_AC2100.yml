@@ -99,7 +99,7 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: XIAOZHAO
+        name: XIAOZHAO-PLUS
         path: openwrt/bin
     - name : Upload artifact
       uses: actions/upload-artifact@master
