@@ -14,5 +14,7 @@ sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-se
 #3. Replace with JerryKuKu’s Argon
 # cd openwrt/feeds/luci/themes/
 # rm -rf luci-theme-argon 
-# # rm -rf openwrt/package/lean/luci-theme-argon 
-# git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
+
+cd openwrt/package/lean/
+# rm -rf luci-theme-argon 
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon-18.06
