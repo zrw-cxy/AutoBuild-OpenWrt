@@ -99,10 +99,15 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: XIAOZHAO-PRO-PLUS
+        name: XIAOZHAO-No-argon
         path: openwrt/bin
-    - name : Upload artifact
+    - name : Upload OpenWrtDl
+      uses: actions/upload-artifact@master
+      with:
+        name: OpenWrtDl
+        path: openwrt/dl
+    - name : Upload OpenWrt
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: openwrt/*
+        path: /home/runner/work/AutoBuild-OpenWrt/AutoBuild-OpenWrt/openwrt
