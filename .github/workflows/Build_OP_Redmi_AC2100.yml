@@ -99,7 +99,7 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: XIAOZHAO-Unstilled-ntpc
+        name: XIAOZHAO-MAX
         path: openwrt/bin
     - name : Upload OpenWrtDl
       uses: actions/upload-artifact@master
