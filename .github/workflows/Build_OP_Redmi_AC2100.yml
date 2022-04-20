@@ -99,15 +99,15 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: XIAOZHAO-MAX
+        name: XIAOZHAO-Unstilled-netdata
         path: openwrt/bin
     - name : Upload OpenWrtDl
       uses: actions/upload-artifact@master
       with:
         name: OpenWrtDl
         path: openwrt/dl
-    - name : Upload OpenWrt
-      uses: actions/upload-artifact@master
-      with:
-        name: OpenWrt
-        path: /home/runner/work/AutoBuild-OpenWrt/AutoBuild-OpenWrt/openwrt
+    # - name : Upload OpenWrt
+    #   uses: actions/upload-artifact@master
+    #   with:
+    #     name: OpenWrt
+    #     path: /home/runner/work/AutoBuild-OpenWrt/AutoBuild-OpenWrt/openwrt
