@@ -99,7 +99,7 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: XIAOZHAO-MAX-IPV6-Conntrack
+        name: XIAOZHAO-MAX-MORE
         path: openwrt/bin
     - name : Upload OpenWrtDl
       uses: actions/upload-artifact@master
