@@ -59,10 +59,10 @@ jobs:
         sudo -E apt-get clean
     - name: Clone source code
       env: 
-        REPO_URL: git clone -b openwrt-22.03  https://github.com/openwrt/openwrt.git openwrt-22.03
+        REPO_URL: https://github.com/openwrt/openwrt.git
         REPO_BRANCH: master
       run: |
-        git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+        git clone --depth 1 $REPO_URL -b openwrt-22.03 $REPO_BRANCH openwrt
         cd openwrt
         # echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
     - name: Update & Install feeds
