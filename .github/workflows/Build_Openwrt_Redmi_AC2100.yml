@@ -5,15 +5,15 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build_Redmi_AC2100
+name: Build_Openwrt_Redmi_AC2100
 
 on: 
   release:
     types: [published]
 
-  # push:
-  #   branches: 
-  #    - master
+  push:
+    branches: 
+     - master
 
   #schedule:
   #  - cron: 0 8 * * 5
@@ -59,12 +59,12 @@ jobs:
         sudo -E apt-get clean
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/coolsnowwolf/lede
+        REPO_URL: git clone -b openwrt-22.03  https://github.com/openwrt/openwrt.git openwrt-22.03
         REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
+        # echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
@@ -77,12 +77,12 @@ jobs:
     #   run: |
     #     git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon   
   
-    - name: Configuration Customization - Build_Redmi_AC2100
+    - name: Configuration Customization - Build_Openwrt_Redmi_AC2100
       env:
-        CONFIG_FILE: 'redmi_ac2100.config'
+        CONFIG_FILE: 'Openwrt_redmi_ac2100.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x ./customize.sh && ./customize.sh
+        chmod +x ./openwrt.sh && ./openwrt.sh
         cd openwrt && make defconfig
         
     - name: Download package
@@ -96,10 +96,10 @@ jobs:
       run: |
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
-    - name : Upload artifact
+    - name : Upload Firmware
       uses: actions/upload-artifact@master
       with:
-        name: XIAOZHAO-MAX-MORE
+        name: XIAOZHAO-2.0
         path: openwrt/bin
     - name : Upload OpenWrtDl
       uses: actions/upload-artifact@master
